@@ -14,8 +14,8 @@
         font-family: inherit;
         font-size: inherit;
         color: inherit;
-        background-color: var(--color-grey-light-2);
         border: none;
+        background-color: var(--color-grey-light-3);
         border-radius: 100px;
         padding: .7rem 2rem;
         width: 90%;
@@ -37,44 +37,79 @@
     }
 // ON FOCUSING THE INPUT THE BUTTON's BACKGROUND COLOR MUST CHANGE TO THE PROVIDED ONE
     &__input:focus + &__button {
-        background-color: var(--color-grey-light-3);
+        background-color: var(--color-primary-light);
     }
 
     &__button{
         border: none;
-        background-color: var(--color-grey-light-3);
-
+        background-color: var(--color-primary-light);
+        border-radius: 100px;
+        width: 3.1rem;
+        height: 3.1rem;
+        position: relative;
+        right: 3px;
+        top: 3.1px;
          &:focus {
              outline: none;
          }
 
          &:active{
-             transform: translateY(2px);
+             transform: translateY(0.5px);
          }
     }
      
     &__icon{
         height: 2rem;
         width: 2rem;
-        fill: var(--color-grey-dark-3);
+        fill: var(--color-grey-light-2);
     }
 }
 
 .user-nav{
-    background-color: limegreen;
-    &__icon-box{
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    
+    //& > * is used to select the direct children of the user-nav class i.e __icon-box and __user
+    & > *{
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        
+    }
 
+    & > *:hover{
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__icon-box{
+        position: relative;
     }
 
     &__icon{
         height: 2.25rem;
         width: 2.25rem;
+        fill: var(--color-grey-dark-2);
     }
 
     &__notification{
+        font-size: .8rem;
         height: 1.75rem;
         width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: #fff;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
 
+        // To adjust the numbers we can use FLEX as a hack
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__user{
@@ -82,8 +117,12 @@
     }
 
     &__user-photo{
-        height: 5rem;
+        height: 5.2rem;
+        width: 5.2rem;
         border-radius: 50%;
+        margin-right: 1rem;
+        border-style: solid;
+        border-color: 1px var(--color-grey-light-2);
     }
 
     &__user-name {
