@@ -1,8 +1,12 @@
+////////////////////////////////////////
+// LOGO
 .logo{
     height: 3.25rem;
     margin-left: 2rem;
 }
 
+////////////////////////////////////////
+// SEARCH
 .search{
     flex: 0 0 40%;
 
@@ -65,6 +69,8 @@
     }
 }
 
+////////////////////////////////////////
+// USER NAVIGATION
 .user-nav{
     display: flex;
     align-self: stretch;
@@ -112,10 +118,6 @@
         align-items: center;
     }
 
-    &__user{
-
-    }
-
     &__user-photo{
         height: 5.2rem;
         width: 5.2rem;
@@ -125,7 +127,31 @@
         border-color: 1px var(--color-grey-light-2);
     }
 
-    &__user-name {
-        
+}
+
+////////////////////////////////////////
+// SIDE NAVIGATION
+.side-nav{
+    
+    &__item{
+
     }
+
+    &__link{
+
+    }
+
+    &__icon{
+        height: 1.75rem;
+        width: 1.75rem;
+        fill: var(--color-grey-light-3);
+    }
+
+}
+
+.legal{
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
 }
