@@ -197,9 +197,39 @@
     display: flex;
     flex-direction: column;
 
+    &__icon-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
     &__icon{
-        height: 1.75rem;
-        width: 1.75rem;
+       fill: var(--color-grey-light-1);
+       height: 3.2rem;
+       width: 3.2rem;
+       cursor: pointer;
+       transform: scaleX(0%);
+       transition: all .4s;
+            &--1:hover {
+                transform: scaleX(4%);
+                fill: var(--facebook);
+            }
+
+            &--2:hover {
+                transform: scaleX(4%);
+                fill: var(--instagram);
+            }
+
+            &--3:hover {
+                transform: scaleX(4%);
+                fill: var(--twitter);
+            }
+
+             &--4:hover {
+                 transform: scaleX(4%);
+                 fill: var(--youtube);
+             }
+       
     }
 
     &__text{

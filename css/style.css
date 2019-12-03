@@ -9,6 +9,10 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
+  --youtube: #fe0000;
+  --facebook: #3b5999;
+  --instagram: #e65165;
+  --twitter: #5da9dd;
   --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
   --line: 1px solid var(--color-grey-light-2); }
 
@@ -163,9 +167,29 @@ body {
 .legal-content {
   display: flex;
   flex-direction: column; }
+  .legal-content__icon-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; }
   .legal-content__icon {
-    height: 1.75rem;
-    width: 1.75rem; }
+    fill: var(--color-grey-light-1);
+    height: 3.2rem;
+    width: 3.2rem;
+    cursor: pointer;
+    transform: scaleX(0%);
+    transition: all .4s; }
+    .legal-content__icon--1:hover {
+      transform: scaleX(4%);
+      fill: var(--facebook); }
+    .legal-content__icon--2:hover {
+      transform: scaleX(4%);
+      fill: var(--instagram); }
+    .legal-content__icon--3:hover {
+      transform: scaleX(4%);
+      fill: var(--twitter); }
+    .legal-content__icon--4:hover {
+      transform: scaleX(4%);
+      fill: var(--youtube); }
   .legal-content__text {
     font-size: 1.2rem;
     color: var(--color-grey-light-4);
