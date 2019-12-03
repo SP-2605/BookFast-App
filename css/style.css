@@ -160,11 +160,17 @@ body {
     fill: currentColor;
     margin-right: 2rem; }
 
-.legal {
-  font-size: 1.2rem;
-  color: var(--color-grey-light-4);
-  text-align: center;
-  padding: 2.5rem; }
+.legal-content {
+  display: flex;
+  flex-direction: column; }
+  .legal-content__icon {
+    height: 1.75rem;
+    width: 1.75rem; }
+  .legal-content__text {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem; }
 
 .gallery {
   display: flex; }
