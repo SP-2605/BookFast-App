@@ -55,6 +55,9 @@
 }
 
 .user-reviews{
-    background-color: orangered;
     flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }
