@@ -4,7 +4,6 @@
     background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
     //box shadow consists of x,y,shadow and opacity
-
     min-height: 50rem;
 }
 
@@ -35,5 +34,27 @@
 
 .hotel-view{
     flex-grow: 1;
-    height: 70rem;
+    // height: 70rem;
+}
+
+.detail{
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+}
+
+.description{
+    background-color: #fff;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    padding: 3rem;
+    box-shadow: var(--shadow-light);
+}
+
+.user-reviews{
+    background-color: orangered;
+    flex: 1;
 }

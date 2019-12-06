@@ -317,14 +317,96 @@
 // BUTTON INLINE
 .btn-inline{
     border: none;
+    outline: none;
     color: var(--color-primary);
     font-size: 1.3rem;
     font-weight: 600;
-    text-transform: uppercase;
     background-color: transparent;
     padding-bottom: 2px;
     cursor: pointer;
     display: inline-block;
     margin-left: .6rem;
+    border-bottom: 1px solid var(--color-primary);
 }
 
+////////////////////////////////////////
+// PARAGRAPH
+.paragraph{
+    &:not(:last-of-type){
+        margin-bottom: 2rem;
+        font-size: inherit;
+        text-justify: auto;
+    }
+
+    &::selection{
+        background-color: var(--color-primary);
+        color: #fff;
+    }
+}
+
+////////////////////////////////////////
+// LIST
+.list{
+    list-style:none;
+    margin:3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item{
+        flex: 0 0 50%;
+        &:not(:last-of-type){
+            margin-bottom: .7rem;
+        }
+    }
+
+    &__item::before{
+        content: "";
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: var(--color-primary);
+        margin-right: .7rem;
+        display: inline-block;
+
+        //Normal Approach [Old Browser]
+        // background-image: url(../img/chevron-with-circle-right.svg);
+        // background-size: cover;
+
+
+        //MASK [New Browser]
+        -webkit-mask-image: url(../img/chevron-with-circle-right.svg);
+        -webkit-mask-size: cover;
+    }
+}
+
+////////////////////////////////////////
+// RECOMMEND
+.recommend{
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-grey-dark-3);
+
+    &__count{
+        margin-right: auto;
+    }
+
+    &__friends{
+        display: flex;
+    }
+
+    &__photo{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-sizing: content-box;
+
+        &:not(:last-child){
+            margin-right: -2rem;
+        }
+    }
+}
