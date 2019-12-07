@@ -47,6 +47,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh; }
+  body::-webkit-scrollbar {
+    display: none; }
 
 .logo {
   height: 3.25rem;
