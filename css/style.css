@@ -355,8 +355,16 @@ body {
     background-color: var(--color-primary);
     margin-right: .7rem;
     display: inline-block;
-    -webkit-mask-image: url(../img/chevron-with-circle-right.svg);
-    -webkit-mask-size: cover; }
+    background-image: url(../img/chevron-with-circle-right.svg);
+    background-size: cover; }
+    @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      .list__item::before {
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-with-circle-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/chevron-with-circle-right.svg);
+        mask-size: cover;
+        background-image: none; } }
 
 .recommend {
   font-size: 1.3rem;
@@ -385,6 +393,10 @@ body {
   flex-direction: column;
   position: relative;
   overflow: hidden; }
+  @media only screen and (max-width: 56.25em) {
+    .review {
+      padding: 2rem;
+      margin-bottom: 3rem; } }
   .review__text {
     margin-bottom: 2rem;
     z-index: 10; }
@@ -423,6 +435,9 @@ body {
 .cta {
   text-align: center;
   padding: 3.5rem 0; }
+  @media only screen and (max-width: 56.25em) {
+    .cta {
+      padding: 2.5rem 0; } }
   .cta__book-now {
     font-size: 2rem;
     font-weight: 400;

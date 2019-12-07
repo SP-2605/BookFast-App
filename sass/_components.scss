@@ -467,13 +467,19 @@
         display: inline-block;
 
         //Normal Approach [Old Browser]
-        // background-image: url(../img/chevron-with-circle-right.svg);
-        // background-size: cover;
+        background-image: url(../img/chevron-with-circle-right.svg);
+        background-size: cover;
 
 
         //MASK [New Browser]
-        -webkit-mask-image: url(../img/chevron-with-circle-right.svg);
-        -webkit-mask-size: cover;
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-with-circle-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-with-circle-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
     }
 }
 
@@ -517,6 +523,11 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text{
         margin-bottom: 2rem;
@@ -578,6 +589,10 @@
 .cta{
     text-align: center;
     padding: 3.5rem 0;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
 
     &__book-now{
         font-size: 2rem;
