@@ -25,6 +25,14 @@
     --line: 1px solid var(--color-grey-light-2);
 }
 
+//SASS Variables
+$bp-largest: 81.25em; //1300px/16px = 75em
+$bp-large: 68.75em; //1100px/16px = 68.75em
+$bp-medium: 56.25em; //900px/16px = 56.25em
+$bp-small: 37.50em; //600px/16px = 37.50em
+$bp-smallest: 31.25em; //500/16 = 31.25em
+
+
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +47,17 @@
 html{
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 62%;
+        max-height: 100%;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+        font-size: 60%;
+        max-height: 100%;
+    }
+
 }
 
 body {

@@ -14,6 +14,12 @@
     justify-content: center;
     align-content: center;
 
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-3);
+    }
+
     &__input{
         font-family: inherit;
         font-size: inherit;
@@ -64,12 +70,23 @@
          &:active{
              transform: translateY(0.5px);
          }
+
+          @media only screen and (max-width: $bp-smallest) {
+              background-color: var(--color-grey-light-3);
+          }
+
+
     }
      
     &__icon{
         height: 2rem;
         width: 2rem;
         fill: var(--color-grey-light-2);
+
+         @media only screen and (max-width: $bp-smallest) {
+             fill: var(--color-grey-dark-2);
+             margin-top: .1rem;
+         }
     }
 }
 
@@ -139,13 +156,27 @@
     font-size: 1.4rem;
     list-style: none;
     margin-top: 3.5rem;
+
+    @media only screen and (max-width: $bp-medium){
+        display: flex;
+        margin-top: 0;
+    }
     
     &__item{
        position: relative;
        //The Below property have to be applied except the last child
        &:not(:last-child){
         margin-bottom: .7rem;
+
+         @media only screen and (max-width: $bp-medium) {
+             margin-bottom: 0;
+         }
        }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
+        }
+
     }
 
     &__item::before {
@@ -160,6 +191,15 @@
         transition: transform .2s,
                     width .4s cubic-bezier(1, 0, 0, 1) .2s, //Here there is a delay of .4s and then width will increase
                     background-color .1s;
+
+         @media only screen and (max-width: $bp-medium) {
+            width: 100%;
+            height: 5px;
+            transform: scaleX(0);
+            transition: transform .2s,
+                        width .4s cubic-bezier(1, 0, 0, 1) .2s,
+                        background-color .1s;
+         }
     }
 
     &__item:hover::before,
@@ -186,6 +226,15 @@
          display: flex;
          align-items: center;
 
+         @media only screen and (max-width: $bp-medium){
+             justify-content: center;
+             padding: 2rem;
+         }
+
+         @media only screen and (max-width: $bp-small) {
+             flex-direction: column;
+             padding: 1.5rem .5rem;
+         }
     }
 
     &__icon{
@@ -193,6 +242,11 @@
         width: 1.75rem;
         fill: currentColor;  //This will inherit the color of the parent element
         margin-right: 2rem;
+
+         @media only screen and (max-width: $bp-small) {
+             margin: 0;
+             margin-bottom: .2rem;
+         }
     }
 
 }
@@ -228,6 +282,12 @@
              &--4:hover {
                  fill: var(--youtube);
              }
+
+        @media only screen and (max-width: $bp-medium){
+            display: flex;
+            justify-content: center;
+            margin: 2rem;
+        }     
        
     }
 
@@ -236,6 +296,11 @@
         color: var(--color-grey-light-4);
         text-align: center;
         padding: 2.5rem;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+
     }
 }
 
@@ -266,6 +331,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+         @media only screen and (max-width: $bp-small) {
+             font-size: 1.8rem;
+             padding: 1.25rem 2rem;
+         }
     }
 
     &__stars{
@@ -298,6 +368,10 @@
         align-self: stretch;
         justify-content: center;
 
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
+
     }
 
     &__rating-avg{
@@ -305,11 +379,19 @@
         font-weight: 300;
         margin-bottom: -3px;
 
+         @media only screen and (max-width: $bp-small) {
+             font-size: 1.8rem;
+         }
+
     }
 
      &__rating-count {
         font-size: .8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: .5rem;
+        }
      }
 }
 
